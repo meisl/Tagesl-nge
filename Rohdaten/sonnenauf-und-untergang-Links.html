@@ -1,0 +1,40 @@
+
+<head></head>
+<body>
+<script type="text/javascript">
+   var page = "https://www.sonnenaufgang-sonnenuntergang.de/csvexport.php";
+   var cities = [
+	{ location: "München",
+          latitude: "48.12161380000001",
+          longitude: "11.654217900000049",
+          zenith:    "90.83333333333",
+          timezone: 0},
+	{ location: "Nürnberg",
+          latitude: "49.4521018",
+          longitude: "11.076665400000024",
+          zenith:    "90.83333333333",
+          timezone: 0},
+	{ location: "Immenstadt",
+          latitude: "47.5592213",
+          longitude: "10.220664199999987",
+          zenith:    "90.83333333333",
+          timezone: 0},
+    ];
+
+    cities.forEach(c => {
+        var urlPrefix = page
+          + "?"
+          + "location=" + c.location + "&"
+          + "latitude=" + c.latitude + "&"
+          + "longitude=" + c.longitude
+        ;
+        document.write("<h3>" + c.location + "</h3><ul>");
+        var year = 2018;
+        for (var month = 6; month <= 12; month++) {
+            var urlStr = urlPrefix + "&month=" + month + "&year=" + year;
+            document.write("<li>" + '<a href="' + urlStr + '">' + year + '-' + month + '</a>');
+        }
+        document.write("</ul>");
+    });
+</script>
+</body>
