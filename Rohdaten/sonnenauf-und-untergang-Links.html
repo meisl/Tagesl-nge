@@ -29,8 +29,8 @@
           + "longitude=" + c.longitude
         ;
         document.write("<h3>" + c.location + "</h3><ul>");
-        var year = 2018;
-        for (var month = 6; month <= 12; month++) {
+        var year = 2019;
+        for (var month = 1; month <= 6; month++) {
             var urlStr = urlPrefix + "&month=" + month + "&year=" + year;
             document.write("<li>" + '<a href="' + urlStr + '">' + year + '-' + month + '</a>');
         }
